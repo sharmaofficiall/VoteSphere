@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 	include 'includes/conn.php';
 	session_start();
@@ -12,4 +13,20 @@
 		exit();
 	}
 
+=======
+<?php
+	include 'includes/conn.php';
+	session_start();
+
+	if(isset($_SESSION['voter'])){
+		$sql = "SELECT * FROM voters WHERE id = '".$_SESSION['voter']."'";
+		$query = $conn->query($sql);
+		$voter = $query->fetch_assoc();
+	}
+	else{
+		header('location: voters_panel.php');
+		exit();
+	}
+
+>>>>>>> a501458a9de087d18a6c7d4b5e9084254723be6e
 ?>
